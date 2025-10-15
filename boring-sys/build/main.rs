@@ -512,6 +512,11 @@ fn ensure_patches_applied(config: &Config) -> io::Result<()> {
         apply_patch(config, "underscore-wildcards.patch")?;
     }
 
+    if config.features.alps_17614 {
+        println!("cargo:warning=applying ALPS codepoint patch to boringssl");
+        apply_patch(config, "alps-17614.patch")?;
+    }
+
     Ok(())
 }
 

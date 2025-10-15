@@ -1,0 +1,25 @@
+diff --git a/src/include/openssl/tls1.h b/src/include/openssl/tls1.h
+index 0000000..0000000 100644
+--- a/src/include/openssl/tls1.h
++++ b/src/include/openssl/tls1.h
+@@ -245,5 +245,5 @@
+ // ExtensionType value from draft-vvv-tls-alps. This is not an IANA defined
+ // extension number.
+-#define TLSEXT_TYPE_application_settings 17513
++#define TLSEXT_TYPE_application_settings 17614
+
+ // ExtensionType values from draft-ietf-tls-esni-13. This is not an IANA defined
+ // extension number.
+diff --git a/src/ssl/test/runner/common.go b/src/ssl/test/runner/common.go
+index 0000000..0000000 100644
+--- a/src/ssl/test/runner/common.go
++++ b/src/ssl/test/runner/common.go
+@@ -122,5 +122,5 @@
+ 	extensionQUICTransportParams        uint16 = 57
+ 	extensionCustom                     uint16 = 1234  // not IANA assigned
+ 	extensionNextProtoNeg               uint16 = 13172 // not IANA assigned
+-	extensionApplicationSettings        uint16 = 17513 // not IANA assigned
++	extensionApplicationSettings        uint16 = 17614 // not IANA assigned
+ 	extensionRenegotiationInfo          uint16 = 0xff01
+ 	extensionQUICTransportParamsLegacy  uint16 = 0xffa5 // draft-ietf-quic-tls-32 and earlier
+ 	extensionChannelID                  uint16 = 30032  // not IANA assigned
