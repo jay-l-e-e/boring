@@ -88,6 +88,9 @@ pq-experimental = []
 # those for `pq-experimental` feature apply.
 underscore-wildcards = []
 
+# Applies a patch (`patches/alps-17613.patch`) to update the ALPS codepoint to 17613
+alps-17613 = []
+
 [build-dependencies]
 autocfg = { workspace = true }
 bindgen = { workspace = true }
