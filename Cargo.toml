@@ -2,8 +2,6 @@
 members = [
     "boring",
     "boring-sys",
-    "tokio-boring",
-    "hyper-boring"
 ]
 resolver = "2"
 
@@ -21,8 +19,6 @@ publish = false
 [workspace.dependencies]
 boring-sys = { version = "4.19.0", path = "./boring-sys" }
 boring = { version = "4.19.0", path = "./boring" }
-tokio-boring = { version = "4.19.0", path = "./tokio-boring" }
-
 bindgen = { version = "0.72.0", default-features = false, features = ["runtime"] }
 bytes = "1"
 cmake = "0.1.18"

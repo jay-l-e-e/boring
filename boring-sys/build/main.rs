@@ -205,14 +205,12 @@ fn get_boringssl_cmake_config(config: &Config) -> cmake::Config {
     // configuration failures if tests are enabled by default via CTest.
     boringssl_cmake.define("BUILD_TESTING", "OFF");
 
-    // Ensure MSVC runtime matches Rust's for each configuration to avoid
-    // mixing debug (MSVCRTD) and release (MSVCRT) CRTs when linking.
-    // This maps Debug -> /MDd and other configs -> /MD.
-    if config.target.ends_with("-msvc") {
-        boringssl_cmake.define(
-            "CMAKE_MSVC_RUNTIME_LIBRARY",
-            "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL",
-        );
+    // Align MSVC runtime with Rust's choice (/MD) in all configurations.
+    // Rust uses the non-debug CRT even for debug builds, so force CMake
+    // to use MultiThreadedDLL to avoid MSVCRTD/MSVCRT conflicts.
+    if cfg!(target_env = "msvc") {
+        boringssl_cmake.define("CMAKE_POLICY_DEFAULT_CMP0091", "NEW");
+        boringssl_cmake.define("CMAKE_MSVC_RUNTIME_LIBRARY", "MultiThreadedDLL");
     }
 
     if config.host == config.target {
