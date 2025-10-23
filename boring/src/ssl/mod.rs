@@ -8,7 +8,7 @@
 //! To connect as a client to a remote server:
 //!
 //! ```no_run
-//! use boring::ssl::{SslMethod, SslConnector};
+//! use boring_vendit::ssl::{SslMethod, SslConnector};
 //! use std::io::{Read, Write};
 //! use std::net::TcpStream;
 //!
@@ -26,7 +26,7 @@
 //! To accept connections as a server from remote clients:
 //!
 //! ```no_run
-//! use boring::ssl::{SslMethod, SslAcceptor, SslStream, SslFiletype};
+//! use boring_vendit::ssl::{SslMethod, SslAcceptor, SslStream, SslFiletype};
 //! use std::net::{TcpListener, TcpStream};
 //! use std::sync::Arc;
 //! use std::thread;
@@ -897,7 +897,7 @@ impl Ssl3AlertLevel {
 }
 
 #[cfg(feature = "rpk")]
-extern "C" fn rpk_verify_failure_callback(
+unsafe extern "C" fn rpk_verify_failure_callback(
     _ssl: *mut ffi::SSL,
     _out_alert: *mut u8,
 ) -> ffi::ssl_verify_result_t {

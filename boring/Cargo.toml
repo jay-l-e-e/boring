@@ -1,7 +1,7 @@
 [package]
-name = "boring"
+name = "boring-vendit"
 version = { workspace = true }
-authors = ["Steven Fackler <sfackler@gmail.com>", "Ivan Nikulin <ifaaan@gmail.com>"]
+authors = ["Jay Lee <jay@vendit.co.kr>", "Steven Fackler <sfackler@gmail.com>", "Ivan Nikulin <ifaaan@gmail.com>"]
 license = "Apache-2.0"
 description = "BoringSSL bindings"
 repository = { workspace = true }
@@ -10,7 +10,6 @@ readme = "README.md"
 keywords = ["crypto", "tls", "ssl", "dtls"]
 categories = ["cryptography", "api-bindings"]
 edition = { workspace = true }
-rust-version = "1.80"
 
 [package.metadata.docs.rs]
 features = ["rpk", "underscore-wildcards"]
@@ -28,7 +27,7 @@ rustdoc-args = ["--cfg", "docsrs"]
 # compatibility with the submoduled boringssl-fips.
 #
 # Use a FIPS-validated version of BoringSSL.
-fips = ["fips-compat", "boring-sys/fips"]
+fips = ["fips-compat", "boring-sys-vendit/fips"]
 
 # Build with compatibility for the submoduled boringssl-fips, without enabling
 # the `fips` feature itself (useful e.g. if `fips-link-precompiled` is used
@@ -38,20 +37,20 @@ fips-compat = []
 # Use a precompiled FIPS-validated version of BoringSSL. Meant to be used with
 # FIPS-20230428 or newer. Users must set `BORING_BSSL_FIPS_PATH` to use this
 # feature, or else the build will fail.
-fips-precompiled = ["boring-sys/fips-precompiled"]
+fips-precompiled = ["boring-sys-vendit/fips-precompiled"]
 
 # Link with precompiled FIPS-validated `bcm.o` module.
-fips-link-precompiled = ["boring-sys/fips-link-precompiled"]
+fips-link-precompiled = ["boring-sys-vendit/fips-link-precompiled"]
 
 # Enables Raw public key API (https://datatracker.ietf.org/doc/html/rfc7250)
 # This feature is necessary in order to compile the bindings for the
 # default branch of boringSSL. Alternatively, a version of boringSSL that
 # implements the same feature set can be provided by setting
 # `BORING_BSSL{,_FIPS}_SOURCE_PATH` and `BORING_BSSL{,_FIPS}_ASSUME_PATCHED`.
-rpk = ["boring-sys/rpk"]
+rpk = ["boring-sys-vendit/rpk"]
 
 # Applies a patch to enable
-underscore-wildcards = ["boring-sys/underscore-wildcards"]
+underscore-wildcards = ["boring-sys-vendit/underscore-wildcards"]
 
 # Controlling key exchange preferences at compile time
 
@@ -80,7 +79,7 @@ bitflags = { workspace = true }
 foreign-types = { workspace = true }
 openssl-macros = { workspace = true }
 libc = { workspace = true }
-boring-sys = { workspace = true }
+boring-sys-vendit = { workspace = true }
 
 [dev-dependencies]
 hex = { workspace = true }

@@ -41,9 +41,9 @@ generic_foreign_type_and_impl_send_sync! {
     /// # Examples
     ///
     /// ```
-    /// use boring::dsa::Dsa;
-    /// use boring::error::ErrorStack;
-    /// use boring::pkey::Private;
+    /// use boring_vendit::dsa::Dsa;
+    /// use boring_vendit::error::ErrorStack;
+    /// use boring_vendit::pkey::Private;
     ///
     /// fn create_dsa() -> Result<Dsa<Private>, ErrorStack> {
     ///     let sign = Dsa::generate(2048)?;

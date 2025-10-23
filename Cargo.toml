@@ -2,13 +2,16 @@
 members = [
     "boring",
     "boring-sys",
+    "tokio-boring",
+    "hyper-boring",
 ]
 resolver = "2"
 
 [workspace.package]
-version = "4.19.0"
-repository = "https://github.com/cloudflare/boring"
+version = "0.0.1"
+repository = "https://github.com/jay-l-e-e/boring"
 edition = "2021"
+rust-version = "1.8"
 
 [workspace.metadata.release]
 pre-release-commit-message = "Release {{version}}"
@@ -17,8 +20,10 @@ tag-prefix = ""
 publish = false
 
 [workspace.dependencies]
-boring-sys = { version = "4.19.0", path = "./boring-sys" }
-boring = { version = "4.19.0", path = "./boring" }
+boring-sys-vendit = { path = "./boring-sys" }
+boring-vendit = { path = "./boring" }
+hyper-boring-vendit = { path = "./hyper-boring" }
+tokio-boring-vendit = { path = "./tokio-boring" }
 bindgen = { version = "0.72.0", default-features = false, features = ["runtime"] }
 bytes = "1"
 cmake = "0.1.18"

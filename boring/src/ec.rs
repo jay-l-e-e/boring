@@ -609,10 +609,10 @@ impl EcKey<Public> {
     /// # Example
     ///
     /// ```no_run
-    /// use boring::bn::BigNumContext;
-    /// use boring::ec::*;
-    /// use boring::nid::Nid;
-    /// use boring::pkey::PKey;
+    /// use boring_vendit::bn::BigNumContext;
+    /// use boring_vendit::ec::*;
+    /// use boring_vendit::nid::Nid;
+    /// use boring_vendit::pkey::PKey;
     ///
     /// // get bytes from somewhere, i.e. this will not produce a valid key
     /// let public_key: Vec<u8> = vec![];

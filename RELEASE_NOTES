@@ -59,7 +59,7 @@
 - 2025-02-23 Fix lifetimes in ssl::select_next_proto
 - 2025-02-23 Revert cmake bump (for now) as it is overly restrictive (#321)
 - 2025-02-21 Introduce a builder pattern for SslEchKeys + make set_ech_keys take a reference (#320)
-- 2025-02-21 Revert "Refactor!: Remove strict `TokioIo` response requirement from `hyper_boring::v1::HttpsConnector`"
+- 2025-02-21 Revert "Refactor!: Remove strict `TokioIo` response requirement from `hyper_boring_vendit::v1::HttpsConnector`"
 - 2025-02-21 Revert "Refactor!: Introduce a Cargo feature for optional Hyper 0 support"
 - 2025-02-21 Address clippy lints
 - 2025-02-21 Actually expose SslEchKeys
@@ -74,7 +74,7 @@
 - 2025-02-12 Clean up ECH tests
 - 2025-02-10 Expose client/server-side ECH
 - 2025-02-10 Expose EVP_HPKE_KEY
-- 2025-02-10 Clean up boring_sys::init()
+- 2025-02-10 Clean up boring_sys_vendit::init()
 - 2024-11-27 Detailed error codes
 - 2025-02-04 chore: Fix docs on SslRef::replace_ex_data
 - 2025-01-22 fix manual_c_str_literals clippy warning
@@ -85,7 +85,7 @@
 - 2024-08-16 Fix bug with accessing memzero'd X509StoreContext in tests
 - 2024-08-16 Support linking with a runtime cpp library
 - 2024-12-06 Refactor!: Introduce a Cargo feature for optional Hyper 0 support
-- 2024-12-06 Refactor!: Remove strict `TokioIo` response requirement from `hyper_boring::v1::HttpsConnector`
+- 2024-12-06 Refactor!: Remove strict `TokioIo` response requirement from `hyper_boring_vendit::v1::HttpsConnector`
 
 4.13.0
 - 2024-11-26 Sync X509StoreBuilder with openssl
@@ -203,7 +203,7 @@
 - 2023-12-13 Introduce set_custom_verify_callback and set_async_custom_verify_callback
 - 2023-12-13 Restore rpk feature in tokio-boring
 - 2023-12-13 Remove rpk from hyper docsrs features
-- 2023-12-14 Introduce tokio_boring::SslStreamBuilder
+- 2023-12-14 Introduce tokio_boring_vendit::SslStreamBuilder
 - 2023-11-14 Swap build and run order; always build
 - 2023-11-13 Remove unused target_env from boring-sys build config
 - 2023-10-13 boring-sys: Blocklist max_align_t in bindgen
@@ -258,7 +258,7 @@
 - 2023-10-11 Introduce bindings for all X509_V_ERR_* constants
 - 2023-02-17 Add SHA224, SHA512, SHA512-256 tests
 - 2023-02-17 Expose SHA512-256
-- 2023-10-09 Remove boring::fips::enable (fixes #150)
+- 2023-10-09 Remove boring_vendit::fips::enable (fixes #150)
 - 2023-10-09 Remove futures from ex data slots once they resolve
 - 2023-10-06 Introduce SslSignatureAlgorithm::RSA_PKCS1_MD5_SHA1
 - 2023-10-06 Introduce Ssl::set_certificate
@@ -373,7 +373,7 @@
 - 2021-12-16 Add/update changelogs
 - 2021-12-16 Bump versions for release
 - 2021-10-06 Remove PasswordCallback
-- 2021-11-04 Relax constraints on `Display for tokio-boring::HandshakeError`
+- 2021-11-04 Relax constraints on `Display for tokio-boring_vendit::HandshakeError`
 - 2021-11-02 boring-sys: Disable unnecessary bindgen dependencies
 - 2021-08-10 Remove unused and deprecated `tempdir` dependency
 - 2021-08-09 Remove unused `*Ref` parameters to macro
@@ -405,7 +405,7 @@
 - 2021-03-11 Bump boring to 1.1.3
 - 2021-03-11 Remove file/line from Display for HandshakeError
 - 2021-03-09 Bump boring to 1.1.2, tokio-boring 2.1.1
-- 2021-03-09 Add tokio_boring::HandshakeError::as_source_stream
+- 2021-03-09 Add tokio_boring_vendit::HandshakeError::as_source_stream
 - 2021-03-09 Introduce MidHandshakeSslStream::into_parts
 - 2021-03-04 Print handshake errors in a better way
 - 2021-03-04 Separate errors in an error stack better

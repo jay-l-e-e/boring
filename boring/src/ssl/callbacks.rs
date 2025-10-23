@@ -19,7 +19,10 @@ use std::slice;
 use std::str;
 use std::sync::Arc;
 
-pub extern "C" fn raw_verify<F>(preverify_ok: c_int, x509_ctx: *mut ffi::X509_STORE_CTX) -> c_int
+pub unsafe extern "C" fn raw_verify<F>(
+    preverify_ok: c_int,
+    x509_ctx: *mut ffi::X509_STORE_CTX,
+) -> c_int
 where
     F: Fn(bool, &mut X509StoreContextRef) -> bool + 'static + Sync + Send,
 {
@@ -717,7 +720,7 @@ impl Drop for CryptoBufferBuilder<'_> {
     fn drop(&mut self) {
         if !self.buffer.is_null() {
             unsafe {
-                boring_sys::CRYPTO_BUFFER_free(self.buffer);
+                boring_sys_vendit::CRYPTO_BUFFER_free(self.buffer);
             }
         }
     }

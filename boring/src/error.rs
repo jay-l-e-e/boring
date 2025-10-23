@@ -6,8 +6,8 @@
 //! # Examples
 //!
 //! ```
-//! use boring::error::ErrorStack;
-//! use boring::bn::BigNum;
+//! use boring_vendit::error::ErrorStack;
+//! use boring_vendit::bn::BigNum;
 //!
 //! let an_error = BigNum::from_dec_str("Cannot parse letters");
 //! match an_error {

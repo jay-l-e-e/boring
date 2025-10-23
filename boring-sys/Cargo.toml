@@ -1,7 +1,8 @@
 [package]
-name = "boring-sys"
+name = "boring-sys-vendit"
 version = { workspace = true }
-authors = ["Alex Crichton <alex@alexcrichton.com>",
+authors = ["Jay Lee <jay@vendit.co.kr>",
+           "Alex Crichton <alex@alexcrichton.com>",
            "Steven Fackler <sfackler@gmail.com>",
            "Ivan Nikulin <ifaaan@gmail.com>"]
 license = "MIT"
