@@ -56,7 +56,7 @@ include = [
 ]
 
 [package.metadata.docs.rs]
-features = ["rpk", "pq-experimental", "underscore-wildcards"]
+features = ["rpk", "underscore-wildcards"]
 rustdoc-args = ["--cfg", "docsrs"]
 
 [features]
@@ -79,20 +79,9 @@ fips-link-precompiled = []
 # Enables Raw public key API (https://datatracker.ietf.org/doc/html/rfc7250)
 rpk = []
 
-# Applies a patch (`patches/boring-pq.patch`) to the boringSSL source code that
-# enables support for PQ key exchange. This feature is necessary in order to
-# compile the bindings for the default branch of boringSSL (`deps/boringssl`).
-# Alternatively, a version of boringSSL that implements the same feature set
-# can be provided by setting `BORING_BSSL{,_FIPS}_SOURCE_PATH`.
-pq-experimental = []
-
 # Applies a patch (`patches/underscore-wildcards.patch`) to enable
-# `ffi::X509_CHECK_FLAG_UNDERSCORE_WILDCARDS`. Same caveats as
-# those for `pq-experimental` feature apply.
+# `ffi::X509_CHECK_FLAG_UNDERSCORE_WILDCARDS`.
 underscore-wildcards = []
-
-# Applies a patch (`patches/alps-17613.patch`) to update the ALPS codepoint to 17613
-alps-17613 = []
 
 [build-dependencies]
 autocfg = { workspace = true }

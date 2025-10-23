@@ -12,7 +12,6 @@ exclude = ["test/*"]
 rust-version = "1.80"
 
 [package.metadata.docs.rs]
-features = ["pq-experimental"]
 rustdoc-args = ["--cfg", "docsrs"]
 
 [features]
@@ -35,9 +34,6 @@ fips-precompiled = ["tokio-boring/fips-precompiled"]
 
 # Link with precompiled FIPS-validated `bcm.o` module.
 fips-link-precompiled = ["tokio-boring/fips-link-precompiled"]
-
-# Enables experimental post-quantum crypto (https://blog.cloudflare.com/post-quantum-for-all/)
-pq-experimental = ["tokio-boring/pq-experimental"]
 
 # Enable Hyper 1 support
 hyper1 = ["dep:http", "dep:hyper", "dep:hyper-util", "dep:tower-service"]
