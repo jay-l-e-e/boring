@@ -20,10 +20,10 @@ tag-prefix = ""
 publish = false
 
 [workspace.dependencies]
-boring-sys-vendit = { path = "./boring-sys" }
-boring-vendit = { path = "./boring" }
-hyper-boring-vendit = { path = "./hyper-boring" }
-tokio-boring-vendit = { path = "./tokio-boring" }
+boring-sys-vendit = { version = "0.0.1", path = "./boring-sys" }
+boring-vendit = { version = "0.0.1", path = "./boring" }
+hyper-boring-vendit = { version = "0.0.1", path = "./hyper-boring" }
+tokio-boring-vendit = { version = "0.0.1", path = "./tokio-boring" }
 bindgen = { version = "0.72.0", default-features = false, features = ["runtime"] }
 bytes = "1"
 cmake = "0.1.18"
