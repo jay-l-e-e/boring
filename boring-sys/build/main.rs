@@ -200,6 +200,11 @@ fn get_boringssl_cmake_config(config: &Config) -> cmake::Config {
     let src_path = get_boringssl_source_path(config);
     let mut boringssl_cmake = cmake::Config::new(src_path);
 
+    // Do not build BoringSSL's tests when vendored via this crate. Some test-only
+    // third_party sources are not present in our distribution and will cause
+    // configuration failures if tests are enabled by default via CTest.
+    boringssl_cmake.define("BUILD_TESTING", "OFF");
+
     if config.host == config.target {
         return boringssl_cmake;
     }
