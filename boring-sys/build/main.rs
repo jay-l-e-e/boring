@@ -207,10 +207,10 @@ fn get_boringssl_cmake_config(config: &Config) -> cmake::Config {
 
     // Align MSVC runtime with Rust's choice (/MD) in all configurations.
     // Rust uses the non-debug CRT even for debug builds, so force CMake
-    // to use MultiThreadedDLL to avoid MSVCRTD/MSVCRT conflicts.
+    // to use MultiThreaded to avoid MSVCRTD/MSVCRT conflicts.
     if cfg!(target_env = "msvc") {
         boringssl_cmake.define("CMAKE_POLICY_DEFAULT_CMP0091", "NEW");
-        boringssl_cmake.define("CMAKE_MSVC_RUNTIME_LIBRARY", "MultiThreadedDLL");
+        boringssl_cmake.define("CMAKE_MSVC_RUNTIME_LIBRARY", "MultiThreaded");
     }
 
     if config.host == config.target {
@@ -291,13 +291,7 @@ fn get_boringssl_cmake_config(config: &Config) -> cmake::Config {
             boringssl_cmake.cflag(&cflag);
         }
 
-        "windows" => {
-            if config.host.contains("windows") {
-                // BoringSSL's CMakeLists.txt isn't set up for cross-compiling using Visual Studio.
-                // Disable assembly support so that it at least builds.
-                boringssl_cmake.define("OPENSSL_NO_ASM", "YES");
-            }
-        }
+        "windows" => {}
 
         "linux" => match &*config.target_arch {
             "x86" => {
