@@ -213,6 +213,11 @@ fn get_boringssl_cmake_config(config: &Config) -> cmake::Config {
         boringssl_cmake.define("CMAKE_MSVC_RUNTIME_LIBRARY", "MultiThreaded");
     }
 
+
+    if config.target_os == "windows" && config.host.contains("windows") && config.host != config.target {
+        boringssl_cmake.define("OPENSSL_NO_ASM", "YES");
+    }
+
     if config.host == config.target {
         return boringssl_cmake;
     }
